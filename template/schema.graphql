@@ -1,0 +1,31 @@
+"""
+Creates a database table for 'Feedback' to store the feedbacks
+ submitted through our web application.
+"""
+type Feedback @model @auth(rules: [{ allow: public }]) {
+  id: ID!
+  content: String!
+  sentiment: String
+}
+
+"""
+Create a new 'Execution' type that will be returned by our call
+to the Step Functions workflow.
+"""
+type Execution {
+  name: String
+  status: String
+  input: String
+  executionArn: String
+  startDate: String
+  stopDate: String
+  output: String
+}
+
+"""
+Mutation that triggers the synchronous execution of our Step
+Functions workflow.
+"""
+type Mutation {
+  executeStateMachine(input: String!): Execution @aws_api_key
+}
