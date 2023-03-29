@@ -32,7 +32,7 @@ From the perspective of the user of our web application, the result will look li
   <img src="./assets/web_ui.jpg">
 </p>
 
-For a walkthrough of the implementation, check out the [blog post](https://aws.amazon.com/blogs/mobile/using-amplify-custom-resources-to-add-aws-step-functions-workflows-to-your-amplify-project/).
+For a walkthrough of the implementation, check out the [blog post](https://aws.amazon.com/blogs/mobile/integrate-aws-step-functions-with-aws-amplify-using-amplify-custom-resources/).
 
 ## Security
 
