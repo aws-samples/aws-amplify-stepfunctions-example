@@ -8,29 +8,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@aws-amplify/ui-react": "^4.4.1",
-    "aws-amplify": "^5.0.22",
+    "@aws-amplify/ui-react": "^5.2.0",
+    "aws-amplify": "^5.3.10",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-icons": "^4.8.0"
+    "react-icons": "^4.10.1"
   },
   "devDependencies": {
-    "@types/react": "^18.0.30",
-    "@types/react-dom": "^18.0.11",
-    "@vitejs/plugin-react": "^3.1.0",
-    "vite": "^4.2.3"
-  },
-  "overrides": {
-    "aws-amplify": {
-      "@aws-sdk/client-sts": "3.348.0",
-      "@aws-sdk/client-lex-runtime-service": "3.348.0",
-      "@aws-sdk/client-lex-runtime-v2": "3.348.0",
-      "@aws-sdk/client-location": "3.348.0",
-      "@aws-sdk/client-s3": "3.348.0"
-    },
-    "@aws-amplify/ui-react": {
-      "@aws-sdk/client-sts": "3.348.0",
-      "@aws-sdk/client-location": "3.348.0"
-    }
+    "@types/react": "^18.2.21",
+    "@types/react-dom": "^18.2.7",
+    "@vitejs/plugin-react": "^4.0.4",
+    "vite": "^4.4.9"
   }
 }
