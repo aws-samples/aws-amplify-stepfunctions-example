@@ -11,10 +11,16 @@ import {
   View,
 } from "@aws-amplify/ui-react";
 import { RiFeedbackLine } from "react-icons/ri";
-import { Amplify, API } from "aws-amplify";
-import { executeStateMachine } from "./graphql/mutations";
-import awsExports from "./aws-exports";
-Amplify.configure(awsExports);
+import { Amplify } from "aws-amplify";
+
+import outputs from '../amplify_outputs.json';
+Amplify.configure(outputs);
+
+import { generateClient } from 'aws-amplify/data';
+/**
+ * @type {import('aws-amplify/data').Client<import('../amplify/data/resource').Schema>}
+ */
+const client = generateClient({ authMode: "apiKey"});
 
 function App() {
   const [feedback, setFeedback] = useState("");
@@ -25,13 +31,10 @@ function App() {
 
     console.log("Feedback: ", feedback);
 
-    const res_sfn = await API.graphql({
-      query: executeStateMachine,
-      variables: { input: feedback },
-      authMode: "API_KEY",
+    const { data, errors } = await client.mutations.executeStateMachine({
+      input: feedback
     });
-
-    const output = JSON.parse(res_sfn.data.executeStateMachine.output);
+    const output = JSON.parse(data.output);
 
     setFeedbackState(output.Sentiment);
 
