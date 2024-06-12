@@ -9,7 +9,7 @@ const backend = defineBackend({
     data,
 });
 
-const customResources = new CustomResources(
+new CustomResources(
     backend.createStack('customResources'),
     'customResources',
     {
@@ -17,16 +17,7 @@ const customResources = new CustomResources(
             apiId: backend.data.apiId,
         },
         notification: {
-            emailAddress: "YOUR_EMAIL_ID"
+            emailAddress: "hello@email.com" // Fill in your email address
         }
     }
 );
-
-backend.addOutput({
-    custom: {
-        apiId: backend.data.apiId,
-        apiKey: backend.data.apiKey,
-        url: backend.data.graphqlUrl,
-    },
-});
-
