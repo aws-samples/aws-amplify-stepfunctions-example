@@ -22,7 +22,7 @@
     "@vitejs/plugin-react": "^4.3.2",
     "aws-cdk": "^2.161.1",
     "aws-cdk-lib": "^2.160.0",
-    "constructs": "^10.3.0",
+    "constructs": "^10.4.2",
     "vite": "^5.4.8"
   }
 }
