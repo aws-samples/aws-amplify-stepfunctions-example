@@ -25,7 +25,7 @@ new CustomResources(
             apiId: backend.data.apiId,
         },
         notification: {
-            emailAddress: "aamorosi@amazon.es" // Fill in your email address
+            emailAddress: "hello@email.com" // Fill in your email address
         }
     }
 );
