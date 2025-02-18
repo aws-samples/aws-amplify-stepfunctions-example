@@ -31,14 +31,25 @@ function App() {
 
     console.log("Feedback: ", feedback);
 
-    const { data, errors } = await client.mutations.executeStateMachine({
-      input: feedback
-    });
-    const output = JSON.parse(data.output);
+    try {
+      const { data, errors } = await client.mutations.executeStateMachine({
+        input: feedback
+      });
 
-    setFeedbackState(output.Sentiment);
+      if (errors) {
+        console.error("Error submitting feedback: ", errors);
+        throw new Error(errors);
+      }
 
-    setFeedback("");
+      const output = JSON.parse(data.output);
+  
+      setFeedbackState(output.Sentiment);
+  
+      setFeedback("");
+    } catch (error) {
+      console.error("Error submitting feedback: ", error);
+      setFeedbackState("ERROR");
+    }
   }
 
   return (
@@ -88,6 +99,19 @@ function App() {
                   heading="Thank you!"
                 >
                   Your feedback has been recorded.
+                </Alert>
+              </View>
+            );
+          case "ERROR":
+            return (
+              <View width="35rem">
+                <Alert
+                  variation="error"
+                  isDismissible={false}
+                  hasIcon={true}
+                  heading="Oops!"
+                >
+                  Something went wrong. Please try again later.
                 </Alert>
               </View>
             );
