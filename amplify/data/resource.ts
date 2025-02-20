@@ -38,7 +38,8 @@ const schema = a.schema({
   executeStateMachine: a
     .mutation()
     .arguments({input: a.string()})
-    .returns(a.ref('Execution')),
+    .returns(a.ref('Execution'))
+    .authorization((allow) => allow.publicApiKey()),
 });
 
 export type Schema = ClientSchema<typeof schema>;
