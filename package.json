@@ -19,7 +19,7 @@
     "@aws-amplify/backend-cli": "^1.8.0",
     "@types/react": "^19.0.12",
     "@types/react-dom": "^19.0.4",
-    "@vitejs/plugin-react": "^4.6.0",
+    "@vitejs/plugin-react": "^4.7.0",
     "aws-cdk": "^2.1020.2",
     "aws-cdk-lib": "^2.204.0",
     "constructs": "^10.4.2",
