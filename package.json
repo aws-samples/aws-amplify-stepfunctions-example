@@ -21,7 +21,7 @@
     "@types/react-dom": "^19.1.8",
     "@vitejs/plugin-react": "^5.0.1",
     "aws-cdk": "^2.1026.0",
-    "aws-cdk-lib": "^2.212.0",
+    "aws-cdk-lib": "^2.213.0",
     "constructs": "^10.4.2",
     "vite": "^7.1.3"
   }
